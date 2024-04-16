@@ -1,15 +1,17 @@
-"# bilibili-discord-bot" 
-install packet
-pip3 install -r requirements.txt
+# bilibili-discord-bot
+A simple discord using py-cord to implement bilibili live streaming start notifcation to discord channel
 
-edit .env file
-change to your bot token
+# Installation
+`pip3 install -r requirements.txt`
 
-change uid and room id in ./cogs/check.py
+# Usage
+edit `.env.example` file to `.env`
+and fill your discord bot token
+
+change uid and room id in `./cogs/check.py`
 change the channelID to the message you want to send
 
-make sure they are same person
-currently only support to notify one user
-
-run the bot
-python main.py
+start the bot
+`python main.py`
+or
+`npm start`
