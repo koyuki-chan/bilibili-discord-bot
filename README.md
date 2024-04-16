@@ -14,4 +14,4 @@ change the channelID to the message you want to send
 start the bot
 `python main.py`
 or
-`npm start`
+`pm2 start ecosystem.json`
