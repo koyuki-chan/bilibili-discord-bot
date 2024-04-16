@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "discord-bot",
-      "script": "/root/discord-bot/main.py",
+      "script": "main.py",
       "interpreter": "/usr/bin/python3",
       "env": {
         "NODE_ENV": "production"
