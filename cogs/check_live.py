@@ -3,8 +3,9 @@ import discord
 from discord.ext import commands
 import asyncio
 import requests
-from . import bili_api
+from cogs import bili_api # type: ignore
 import datetime
+import os,json
 
 class BilibiliLiveNotifier(commands.Cog):
     def __init__(self, bot, uid, room_id,channel_id):
@@ -43,7 +44,15 @@ class BilibiliLiveNotifier(commands.Cog):
             await asyncio.sleep(20)
 
 def setup(bot):
-    uid = 1437582453
-    room_id = 22816111
-    channel_id = 123123123
+    
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+    parent_dir = os.path.join(parent_dir,"config.json")
+
+    with open(parent_dir,"r") as file:
+        json_data = json.load(file)
+        
+    uid = json_data['uid']
+    room_id = json_data['room_id']
+    channel_id = json_data['channel_ID']
     bot.add_cog(BilibiliLiveNotifier(bot, uid, room_id, channel_id))

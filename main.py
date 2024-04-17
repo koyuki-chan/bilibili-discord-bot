@@ -14,6 +14,7 @@ TOKEN = os.getenv('TOKEN')
 
 bot = discord.Bot()
 bot.load_extension('cogs.commands')
-bot.load_extension('cogs.check')
+bot.load_extension('cogs.check_live')
+bot.load_extension('cogs.check_icon')
 
 bot.run(TOKEN)
